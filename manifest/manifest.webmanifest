@@ -3,7 +3,7 @@
     "background_color": "white",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "index.html",
     "short_name": "meme",
     "name": "meme app",
     "icons": [
