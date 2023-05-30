@@ -1,0 +1,87 @@
+:root {
+    --mdc-theme-primary: #930093 !important;
+}
+body {
+    margin: 0;
+}
+.homeBtn {
+    text-decoration: none;
+    color: white;
+}
+
+.pointer{
+    pointer-events: none;
+}
+
+.sideBarImg{
+    max-width: 200px;
+    margin-left: 25px;
+}
+.hidden {
+    display: none;
+}
+
+/*masonry*/
+
+.mdc-image-list--masonry {
+    column-count: 2;
+}
+
+/*footer*/
+.mdc-footer-bar {
+    position: fixed;
+    bottom: 0;
+    background-color: var(--mdc-theme-primary);
+}
+.mdc-tab__content {
+    color: white;
+}
+
+.mdc-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/*sheet*/
+.sheetHeader, .sheetFooter {
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+    background-color: var(--mdc-theme-primary);
+    color: white;
+}
+
+.sheet {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-left: 0;
+    background-color: black;
+    transition: margin-left 0.3s ease;
+}
+
+.sheet-out-of-view {
+    margin-left: 100%;
+}
+
+.sheet main {
+    min-height: calc(100vh - 56px - 48px);
+}
+
+.sheet main img {
+    width: 100%;
+    height: auto;
+}
+
+.sheetTab {
+    color: white;
+}
+
+/* offline */
+
+.offlineTitle {
+    color: #930093;
+}
+

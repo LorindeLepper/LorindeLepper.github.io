@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Vereiste meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App</title>
+
+    <link rel="stylesheet" href="css.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+    </script>
+
+    <!-- Material.io bestanden (CSS & Font/icons)-->
+    <!-- Uitleg werking componenents: https://material.io/components?platform=web -->
+    <!-- Demo van components:         https://material-components.github.io/material-components-web-catalog/#/ -->
+    <!-- Demo en uitleg icons:        https://fonts.google.com/icons?selected=Material+Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- PWA -->
+    <link rel="manifest" href="manifest/manifest.webmanifest">
+    
+    <!-- Material.io bestanden (JS en registratie componenten) -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>
+        const MDCBanner = mdc.banner.MDCBanner;const MDCCheckbox = mdc.checkbox.MDCCheckbox;const MDCChip = mdc.chips.MDCChip;const MDCChipSet = mdc.chips.MDCChipSet;const MDCCircularProgress = mdc.circularProgress.MDCCircularProgress;const MDCDataTable = mdc.dataTable.MDCDataTable;const MDCDialog = mdc.dialog.MDCDialog;const MDCDrawer = mdc.drawer.MDCDrawer;const MDCFloatingLabel = mdc.floatingLabel.MDCFloatingLabel;const MDCFormField = mdc.formField.MDCFormField;const MDCIconButtonToggle = mdc.iconButton.MDCIconButtonToggle;const MDCLineRipple = mdc.lineRipple.MDCLineRipple;const MDCLinearProgress = mdc.linearProgress.MDCLinearProgress;const MDCList = mdc.list.MDCList;const MDCMenu = mdc.menu.MDCMenu;const MDCMenuSurface = mdc.menuSurface.MDCMenuSurface;const MDCNotchedOutline = mdc.notchedOutline.MDCNotchedOutline;const MDCRadio = mdc.radio.MDCRadio;const MDCRipple = mdc.ripple.MDCRipple;const MDCSegmentedButton = mdc.segmentedButton.MDCSegmentedButton;const MDCSelect = mdc.select.MDCSelect;const MDCSlider = mdc.slider.MDCSlider;const MDCSnackbar = mdc.snackbar.MDCSnackbar;const MDCSwitch = mdc.switchControl.MDCSwitch;const MDCTabBar = mdc.tabBar.MDCTabBar;const MDCTextField = mdc.textField.MDCTextField;const MDCTooltip = mdc.tooltip.MDCTooltip;const MDCTopAppBar = mdc.topAppBar.MDCTopAppBar;
+    </script>
+
+</head>
+
+<body>
+<!-- HEADER -->
+<header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+            <a href="" class="homeBtn"><span class="mdc-top-app-bar__title">Homepage</span></a>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+        </section>
+    </div>
+</header>
+
+
+
+
+
+<!-- SIDE DRAWER -->
+<aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+            <img src="images/IMG_2970.jpg" class="sideBarImg">
+            <a class="mdc-list-item mdc-list-item--activated" href="" aria-current="page" tabindex="0">
+                <span class="mdc-list-item__ripple"></span>
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+                <span class="mdc-list-item__text">home</span>
+            </a>
+        </nav>
+    </div>
+</aside>
+
+
+
+
+
+
+
+<main class="mdc-top-app-bar--fixed-adjust" id="main">
+
+
+
+
+
+<!--  TAB-BAR UNDER HEADER  -->
+    <div class="mdc-tab-bar" role="tablist">
+        <div class="mdc-tab-scroller">
+            <div class="mdc-tab-scroller__scroll-area">
+                <div class="mdc-tab-scroller__scroll-content">
+<!--                    favorite-->
+                    <button class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="0" onclick="selectAllFunction('memes')">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Memes</span>
+                      </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                        <span class="mdc-tab__ripple"></span>
+                    </button>
+<!--                    fails-->
+                    <button class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="0"  onclick="selectAllFunction('fails')">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Fails</span>
+                      </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                        <span class="mdc-tab__ripple"></span>
+                    </button>
+<!--                    tweets-->
+                    <button class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="0"  onclick="selectAllFunction('tweets')">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Tweets</span>
+                      </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                        <span class="mdc-tab__ripple"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<!-- masonry image list -->
+    <ul class="mdc-image-list mdc-image-list--masonry my-masonry-image-list">
+
+        <li class="mdc-image-list__item memes" onclick="openSheet('sheet-meme', 'images/24y7wconkg7a1.jpg', '2023 be like')">
+            <img class="mdc-image-list__image" src="images/24y7wconkg7a1.jpg">
+        </li>
+        <li class="mdc-image-list__item fails" onclick="openSheet('sheet-meme', 'images/33b29ea0f01a5f4dfe0a8353ef072844.gif', 'table flip')">
+            <img class="mdc-image-list__image" src="images/33b29ea0f01a5f4dfe0a8353ef072844.gif">
+        </li>
+        <li class="mdc-image-list__item tweets" onclick="openSheet('sheet-meme', 'images/download.jpg', 'moth')">
+            <img class="mdc-image-list__image" src="images/download.jpg">
+        </li>
+        <li class="mdc-image-list__item fails" onclick="openSheet('sheet-meme', 'images/fail-icegif-8.gif', 'baby flip')">
+            <img class="mdc-image-list__image" src="images/fail-icegif-8.gif">
+        </li>
+        <li class="mdc-image-list__item tweets" onclick="openSheet('sheet-meme', 'images/funny-memes-2023-academy-awards-ceremony-4.jpeg', 'white')">
+            <img class="mdc-image-list__image" src="images/funny-memes-2023-academy-awards-ceremony-4.jpeg">
+        </li>
+        <li class="mdc-image-list__item memes" onclick="openSheet('sheet-meme', 'images/corn-trump.jpeg.webp', 'donald corn')">
+            <img class="mdc-image-list__image" src="images/corn-trump.jpeg.webp">
+        </li>
+        <li class="mdc-image-list__item fails" onclick="openSheet('sheet-meme', 'images/RA2O.gif', 'kick the baby')">
+            <img class="mdc-image-list__image" src="images/RA2O.gif">
+        </li>
+        <li class="mdc-image-list__item tweets" onclick="openSheet('sheet-meme', 'images/tumblr_bf68feea5db27ff24a8b23fe4e159910_1f63bc3d_500.jpg', 'dog')">
+            <img class="mdc-image-list__image" src="images/tumblr_bf68feea5db27ff24a8b23fe4e159910_1f63bc3d_500.jpg">
+        </li>
+        <li class="mdc-image-list__item memes" onclick="openSheet('sheet-meme', 'images/Procrastination-meme.png', 'school be like')">
+            <img class="mdc-image-list__image" src="images/Procrastination-meme.png">
+        </li>
+
+    </ul>
+
+
+
+
+
+
+
+<!--    FOOTER-->
+    <footer class="mdc-top-app-bar--fixed-adjust">
+        <div class="mdc-tab-bar mdc-footer-bar" role="tablist">
+            <div class="mdc-tab-scroller">
+                <div class="mdc-tab-scroller__scroll-area">
+                    <div class="mdc-tab-scroller__scroll-content">
+
+                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                          <span class="mdc-tab__content">
+                            <span class="mdc-tab__icon_footer material-icons" aria-hidden="true">lock</span>
+                          </span>
+                            <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                             <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                         </span>
+                        </button>
+
+                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                          <span class="mdc-tab__content">
+                            <span class="mdc-tab__icon_footer material-icons" aria-hidden="true">settings</span>
+                          </span>
+                            <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                             <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                         </span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</main>
+
+
+
+
+
+<!-- SHEET -->
+<section class="sheet sheet-meme hidden sheet-out-of-view" id="sheet-meme">
+
+<!-- header -->
+    <header class="mdc-top-app-bar-sheet mdc-top-app-bar--fixed mdc-top-app-bar-meme sheetHeader">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-icon-button" aria-label="Close sheet navigation menu" onclick="closeSheet()">close</button>
+                <span id="meme-title" class="mdc-top-app-bar__title"></span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">share</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+            </section>
+        </div>
+    </header>
+
+<!-- main -->
+    <main class="mdc-top-app-bar--fixed-adjust" id="main-meme main-content">
+        <img id="meme-image" alt="meme" src="">
+    </main>
+
+<!-- footer -->
+    <footer>
+        <div class="mdc-tab-bar mdc-tab-bar-meme sheetFooter" role="tablist">
+            <div class="mdc-tab-scroller">
+                <div class="mdc-tab-scroller__scroll-area">
+                    <div class="mdc-tab-scroller__scroll-content">
+                        <button class="mdc-tab mdc-tab sheetTab" role="tab" aria-selected="false" tabindex="0">
+                            <span class="mdc-tab__content">
+                              <span class="mdc-tab__icon material-icons" aria-hidden="true">thumb_up</span>
+                            </span>
+                            <span class="mdc-tab-indicator">
+                              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                            </span>
+                            <span class="mdc-tab__ripple"></span>
+                        </button>
+                        <button class="mdc-tab mdc-tab sheetTab" role="tab" aria-selected="false" tabindex="0">
+                            <span class="mdc-tab__content">
+                              <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
+                            </span>
+                            <span class="mdc-tab-indicator">
+                              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                            </span>
+                            <span class="mdc-tab__ripple"></span>
+                        </button>
+                        <button class="mdc-tab mdc-tab sheetTab" role="tab" aria-selected="false" tabindex="0">
+                            <span class="mdc-tab__content">
+                              <span class="mdc-tab__icon material-icons" aria-hidden="true">thumb_down</span>
+                            </span>
+                            <span class="mdc-tab-indicator">
+                              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                            </span>
+                            <span class="mdc-tab__ripple"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</section>
+
+<script src="js.js"></script>
+</body>
+</html>
