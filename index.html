@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+    <script>
+        if (navigator.serviceWorker.controller) {
+            console.log("Active service worker found");
+        } else {
+            navigator.serviceWorker
+                .register("serviceworker.js", {
+                    scope: "./"
+                })
+                .then(function (reg) {
+                    console.log("Service worker  registered);
+                });
+        }
+    </script>
     <!-- Vereiste meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
