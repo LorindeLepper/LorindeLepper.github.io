@@ -2,7 +2,6 @@
     "theme_color": "#930093",
     "background_color": "white",
     "display": "standalone",
-    "scope": "/",
     "start_url": "index.html",
     "short_name": "meme",
     "name": "meme app",
