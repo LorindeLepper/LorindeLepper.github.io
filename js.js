@@ -1,39 +1,42 @@
-// service worken
+// service worker
 window.addEventListener("load", () => {
    if ("serviceWorker" in navigator) {
        navigator.serviceWorker.register("service-worker.js")
    }
 });
 
+
+
 // navigation drawer
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const list = MDCList.attachTo(document.querySelector('.mdc-list'));
 list.wrapFocus = true;
 const listEl = document.querySelector('.mdc-drawer .mdc-list');
+const mainContentEl = document.querySelector('.main');
 
 
 
 function noClick () {
-    document.querySelector('#main').classList.add('pointer');
+    document.querySelector('.main').classList.add('pointer');
 }
-
 
 // Openen en dicht doen van navigation drawer
 document.querySelector('.mdc-top-app-bar__navigation-icon').addEventListener('click', (event)=>{drawer.open = true; noClick()});
-
-// hoe werkt dit??,
 listEl.addEventListener('click', (event) => {
     drawer.open = false;
 });
-// document.body.addEventListener('MDCDrawer:closed', () => {
-//     mainContentEl.querySelector('input, button').focus();
-// });
+document.body.addEventListener('MDCDrawer:closed', () => {
+    mainContentEl.querySelector('input, button').focus();
+});
+
+
 
 // Filter systeem
 function selectAllFunction(i) {
     document.querySelectorAll('.mdc-image-list__item').forEach(elem => {elem.classList.add('hidden')});
     document.querySelectorAll('.' + i).forEach(elem => {elem.classList.remove('hidden')});
 }
+
 
 
 // als iemand op vorige drukt (naar home) worden de sheets gesloten

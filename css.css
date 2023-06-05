@@ -75,8 +75,11 @@ body {
     height: auto;
 }
 
-.sheetTab {
-    color: white;
+.material-icons {
+    color: white; !important;
+}
+.mdc-tab__icon {
+    color: white; !important;
 }
 
 /* offline */
