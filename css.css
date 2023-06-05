@@ -45,7 +45,7 @@ body {
 }
 
 /*sheet*/
-.sheetHeader, .sheetFooter {
+.sheetHeader {
     width: 100vw;
     position: fixed;
     z-index: 10;
