@@ -55,7 +55,7 @@ body {
 .sheetFooter {
     z-index: 10000;
     background-color: var(--mdc-theme-primary);
-    position: fixed;
+    position: sticky;
     color: white;
 }
 
