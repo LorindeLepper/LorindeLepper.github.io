@@ -52,6 +52,11 @@ body {
     background-color: var(--mdc-theme-primary);
     color: white;
 }
+.sheetFooter {
+    z-index: 10000;
+    height: 1000px;
+    width: 1000px;
+}
 
 .sheet {
     position: absolute;
