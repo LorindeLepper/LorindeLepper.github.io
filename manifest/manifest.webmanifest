@@ -7,7 +7,9 @@
     "short_name": "meme",
     "name": "meme app",
     "description": "meme app",
-     "icons": [
+    "apple-mobile-web-app-capable": "yes",
+     "icons":
+     [
          {
              "src": "icon-192x192.png",
              "sizes": "192x192",
@@ -28,8 +30,5 @@
              "sizes": "512x512",
              "type": "image/png"
          }
-     ],
-     "apple-mobile-web-app-capable": "yes",
-     "apple-mobile-web-app-status-bar-style": "black",
-     "apple-mobile-web-app-title": "GCMemes PWA"
- }
+     ]
+}
